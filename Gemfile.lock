@@ -17,6 +17,7 @@ GEM
       dm-validations (~> 1.2.0)
     data_objects (0.10.15)
       addressable (~> 2.1)
+    diff-lcs (1.2.5)
     dm-aggregates (1.2.0)
       dm-core (~> 1.2.0)
     dm-constraints (1.2.0)
@@ -57,6 +58,19 @@ GEM
     json (1.8.2)
     json_pure (1.8.2)
     multi_json (1.10.1)
+    rspec (3.2.0)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+    rspec-core (3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.1)
     stringex (1.5.1)
     uuidtools (2.1.5)
 
@@ -66,3 +80,4 @@ PLATFORMS
 DEPENDENCIES
   data_mapper
   dm-postgres-adapter
+  rspec
