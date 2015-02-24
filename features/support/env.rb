@@ -10,12 +10,12 @@ require 'rspec'
 
 Capybara.app = BookmarkManager
 
-class BookmarkManagerWorld
+class BookmarkManager
   include Capybara::DSL
   include RSpec::Expectations
   include RSpec::Matchers
 end
 
 World do
-  BookmarkManagerWorld.new
+  BookmarkManager.new
 end
