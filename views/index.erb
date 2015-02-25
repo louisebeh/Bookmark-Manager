@@ -1,5 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+
+<body>
+
+<h1>Welcome to Bookmark Manager</h1>
+
 <ul>
   <% @links.each do |link| %>
     <li><a href="<%= link.url %>"><%= link.title %></a></li>
   <% end %>
 </ul>
+
+<div id = "new-link">
+  <form action="/links" method="post">
+    URL: <input type="text" name="url">
+    Title: <input type="text" name="title">
+    <input type="submit" value="Add link">
+  </form>
+</div>
+
+</body>
+
+</html>

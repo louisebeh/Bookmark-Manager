@@ -3,9 +3,7 @@ require 'spec_helper'
 feature "User browses a list of links" do
 
   before(:each) {
-    Link.create(:url => "http://www.makersacademy.com",
-                :title => "Makers Academy")
-  }
+    Link.create(:url => "http://www.makersacademy.com", :title => "Makers Academy")}
 
   scenario "when opening the homepage" do
     visit '/'
