@@ -1,15 +1,19 @@
 <header>
   <div id="logo">Bookmark Manager</div>
-  <div id="user-links">
+
     <% if current_user %>
       <span id="welcome-message">
         Welcome, <%= current_user.email %>
       </span>
-
-      <form id="sign-up" method="post" action="/sessions">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Sign out">
-      </form>
     <% end %>
+
+    <form id="sign_up" method="post" action="/users">
+      <input type="submit" value="Sign up">
+    </form>
+
+    <form id="sign_in" method="post" action="/sessions">
+      <input type="submit" value="Sign in">
+    </form>
+
   </div>
 </header>
