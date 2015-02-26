@@ -16,13 +16,6 @@ use Rack::Flash
     erb :index
   end
 
-  post '/links' do
-    url = params["url"]
-    title = params["title"]
-    tags = params["tags"].split(" ").map {|tag| Tag.first_or_create(:text => tag)}
-    Link.create(:url => url, :title => title, :tags => tags)
-    redirect to ('/')
-  end
 
   get '/tags/:text' do
     tag = Tag.first(:text => params[:text])
@@ -33,6 +26,18 @@ use Rack::Flash
   get '/users/new' do
     @user = User.new
     erb :"users/new"
+  end
+
+  get '/sessions/new' do
+    erb :"sessions/new"
+  end
+
+  post '/links' do
+    url = params["url"]
+    title = params["title"]
+    tags = params["tags"].split(" ").map {|tag| Tag.first_or_create(:text => tag)}
+    Link.create(:url => url, :title => title, :tags => tags)
+    redirect to ('/')
   end
 
   post '/users' do
@@ -48,10 +53,6 @@ use Rack::Flash
     end
   end
 
-  get '/sessions/new' do
-    erb :"sessions/new"
-  end
-
   post '/sessions' do
     email, password = params[:email], params[:password]
     user = User.authenticate(email, password)
@@ -63,13 +64,3 @@ use Rack::Flash
       erb :"sessions/new"
     end
   end
-
-
-
-
-
-
-
-
-
-
