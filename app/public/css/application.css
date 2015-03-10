@@ -1,55 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Helvetica, Arial, Sans-serif;
-  background-image: url(http://d1stfe5sz9ezud.cloudfront.net/wp-content/uploads/2014/08/65b5ee4cacaa5d303b59f56a3a92c0b3.jpg)
+  background-image: url();
+  color: #333;
 }
 
- /*every immediate child to be vertically centered */
-header > * {
-    margin: auto 0;
-  }
-
-header {
-  height: 50px;
-  background-color: black;
-  color: white;
-  padding: 0 20px;
-  display: flex;
-}
-
-header #logo {
-  margin: auto 0;
-  color: white;
+/* no links should be underlined */
+a {
   text-decoration: none;
-  display: flex;
+  color: #b77843;
 }
 
-a.button {
+.button {
   display: inline-block; /* display inline but have dimensions */
-  width: 80px;
-  background-color: yellow;
-  border: 3px solid white;
-  color: black; /*text colour*/
-  text-decoration: none; /*no underlining*/
-  padding: 5px 5px;
+  width: 110px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #82B743;
+  border: 2px solid white;
+  color: white; /*text colour*/
+  padding: 5px 10px;
   text-align: center;
-  vertical-align: center;
   border-radius: 4px; /*rounded corners*/
   margin-left: 5px;
   margin-right: 5px;
-  margin: 10px;
-  text-shadow: 0 0 0px rgba(0,0,0, 0.4); /*for readability*/
+  text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
 }
 
-a.button.highlighted {
-  background-color: rgba(255,100,100, 1);
-
+/* a link that has both classes. Overrides the previous declaration */
+.button.highlighted {
+  background-color: #b77843;
 }
 
-header #user-links {
-  flex: 1; /* http://learnlayout.com/flexbox.html */
-  -webkit-flex: 1;
-  text-align: right;
+header {
+  height: 40px;
+  background-color: black;
+  color: white;
+  display: flex; /* http://learnlayout.com/flexbox.html */
+  padding: 0 20px;
 }
+
+  /* every immediate child to be vertically centered */
+  header > * {
+    margin: auto 0;
+  }
+  header #logo {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  header a {
+    color: white;
+  }
+
+  header #user-links {
+    flex: 1; /* http://learnlayout.com/flexbox.html */
+    -webkit-flex: 1;
+    text-align: right;
+  }
+
+  header #user-links > * {
+    display: inline-block;
+  }
+
+  header #user-links #welcome-message {
+    font-size: 14px;
+  }
 
 #links-container {
   background-color: white;
@@ -58,33 +77,32 @@ header #user-links {
   padding: 10px;
 }
 
-  .link {
-    background-color: #EEE;
-    box-shadow: 0 0 5px rgba(0,0,0,0.4);
-    margin: 10px inherit;
-    padding: 15px 10px;
+.link {
+  background-color: #EEE;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  margin: 10px inherit;
+  padding: 15px 10px;
+}
+
+  .link a.title {
+    letter-spacing: 1px;
   }
 
-    .link a.title {
-      letter-spacing: 1px;
-    }
+  .link .description {
+    margin: 10px inherit;
+  }
 
-    .link .description {
-      margin: 10px inherit;
-    }
-
-    .link .source {
-      float: right;
-      font-size: 12px;
-    }
+  .link .source {
+    /* http://learnlayout.com/float.html and the next 4 sections */
+    float: right;
+    font-size: 12px;
+  }
 
 footer {
   display: flex;
   background-color: rgba(0,0,0,0.2);
   position: absolute;
   bottom: 0;
-  color: white; /*text colour*/
-  text-decoration: none; /*no underlining*/
 }
 
   footer > * {
