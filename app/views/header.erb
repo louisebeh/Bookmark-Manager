@@ -1,5 +1,10 @@
 <header>
-  <div id="logo"><a href='/' id='logo'>Bookmark Manager</a></div>
+  <div id="logo">
+    <a href='/' id='logo'>Bookmark Manager</a>
+  </div>
+
+  <a href="links/new" class="button highlighted">Add link</a>
+
   <div id="user-links">
     <% if current_user %>
       <span id="welcome-message">
@@ -10,9 +15,11 @@
         <input type="hidden" name="_method" value="delete">
         <input type="submit" value="Sign out">
       </form>
-      <% else %>
-        <a href='/users/new' id='sign-up' class='button'>Sign up</a>
-        <a href='/sessions/new' id='sign-in' class='button'>Sign in</a>
+
+    <% else %>
+      <a href='/users/new' id='sign-up' class='button'>Sign up</a>
+      <a href='/sessions/new' id='sign-in' class='button'>Sign in</a>
     <% end %>
+
   </div>
 </header>

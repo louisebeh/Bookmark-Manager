@@ -1,5 +1,6 @@
 body {
   font-family: Helvetica, Arial, Sans-serif;
+  background-image: url(http://d1stfe5sz9ezud.cloudfront.net/wp-content/uploads/2014/08/65b5ee4cacaa5d303b59f56a3a92c0b3.jpg)
 }
 
  /*every immediate child to be vertically centered */
@@ -26,10 +27,10 @@ a.button {
   display: inline-block; /* display inline but have dimensions */
   width: 80px;
   background-color: yellow;
-  border: 0px solid white;
+  border: 3px solid white;
   color: black; /*text colour*/
   text-decoration: none; /*no underlining*/
-  padding: 5px 10px;
+  padding: 5px 5px;
   text-align: center;
   vertical-align: center;
   border-radius: 4px; /*rounded corners*/
@@ -39,8 +40,40 @@ a.button {
   text-shadow: 0 0 0px rgba(0,0,0, 0.4); /*for readability*/
 }
 
+a.button.highlighted {
+  background-color: rgba(255,100,100, 1);
+
+}
+
 header #user-links {
   flex: 1; /* http://learnlayout.com/flexbox.html */
   -webkit-flex: 1;
   text-align: right;
 }
+
+#links-container {
+  background-color: white;
+  margin: 40px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  padding: 10px;
+}
+
+  .link {
+    background-color: #EEE;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    margin: 10px inherit;
+    padding: 15px 10px;
+  }
+
+    .link a.title {
+      letter-spacing: 1px;
+    }
+
+    .link .description {
+      margin: 10px inherit;
+    }
+
+    .link .source {
+      float: right;
+      font-size: 12px;
+    }
